@@ -1,36 +1,43 @@
-.project-body {
+.project-wrapper {
+  max-width: 700px;
   margin: 30px auto;
+  font-family: "Roboto Condensed", sans-serif;
+}
+/* body {
+  background-color: pink;
+} */
+.project-body {
   margin-bottom: 0px;
   padding: 15px;
+  padding-bottom: 0px;
   border: 5px solid;
   border-color: aqua;
   border-radius: 15px;
-  max-width: 700px;
 }
 
-h1,
-h6,
 h4,
 h9 {
   display: inline;
-  color: red;
 }
+h6 {
+  display: inline;
+  position: relative;
+  top: -50px;
+}
+
 h1 {
   font-size: 80px;
   font-weight: 200;
-}
-
-body {
-  font-family: "Roboto Condensed", sans-serif;
-  background-color: pink;
+  display: inline;
 }
 
 .logo {
   font-size: 70px;
-  color: aliceblue;
+  color: pink;
 }
 
 ul {
   list-style-type: none;
   padding: 0;
+  font-size: 18px;
 }

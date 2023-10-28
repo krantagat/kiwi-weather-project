@@ -28,53 +28,56 @@
     <title>Kiwi weather :)</title>
   </head>
   <body>
-    <div class="project-body">
-      <form>
-        <div class="container">
-          <div class="row">
-            <div class="col-sm">
-              <div class="mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="search-box"
-                  placeholder="Which city..."
-                  autocomplete="off"
-                />
+    <div class="project-wrapper">
+      <div class="project-body">
+        <form>
+          <div class="container">
+            <div class="row">
+              <div class="col-sm">
+                <div class="mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="search-box"
+                    placeholder="Which city..."
+                    autocomplete="off"
+                  />
+                </div>
+              </div>
+              <div class="col-sm">
+                <button type="submit" class="btn btn-primary">Search</button>
+              </div>
+              <div class="col-sm">
+                <button type="submit" class="btn btn-success">
+                  Current postion
+                </button>
               </div>
             </div>
-            <div class="col-sm">
-              <button type="submit" class="btn btn-primary">Search</button>
+          </div>
+        </form>
+        <div class="container">
+          <div class="row">
+            <div class="col-3">
+              <h1>32°</h1>
+              <h6 class="units">C | <a href="#">F</a></h6>
             </div>
             <div class="col-sm">
-              <button type="submit" class="btn btn-success">
-                Current postion
-              </button>
+              <ul>
+                <li>Realfeel: 35°</li>
+                <li>Wind: 20 km/h</li>
+                <li>Humidity: 40%</li>
+                <li>add somethinelse</li>
+              </ul>
             </div>
-          </div>
-        </div>
-      </form>
-      <div class="container">
-        <div class="row">
-          <div class="col-3">
-            <h1>32°</h1>
-            <h6>C | F</h6>
-          </div>
-          <div class="col-sm">
-            <ul>
-              <li>Realfeel: 35°</li>
-              <li>Wind: 20 km/h</li>
-              <li>Humidity: 40%</li>
-            </ul>
-          </div>
-          <div class="col-sm">
-            <i class="fa-solid fa-cloud-sun logo"></i>
-          </div>
-          <div class="col-sm">
-            <h4>City Name, Country</h4>
-            <br />
-            <h9>Sunday 4 June 2023</h9>
-            <h9>23:15</h9>
+            <div class="col-sm">
+              <i class="fa-solid fa-cloud-sun logo"></i>
+            </div>
+            <div class="col-sm">
+              <h4>City Name, Country</h4>
+              <br />
+              <h9>Sunday 4 June 2023</h9>
+              <h9>23:15</h9>
+            </div>
           </div>
         </div>
       </div>
