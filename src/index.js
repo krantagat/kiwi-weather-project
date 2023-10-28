@@ -4,7 +4,7 @@ function mainTemperature(response) {
   let realFeelData = document.querySelector("#realFeel");
   let windData = document.querySelector("#wind");
   let humidityData = document.querySelector("#humidity");
-  //   let descriptionData = document.querySelector("#description");
+  let descriptionData = document.querySelector("#description");
   temperaureData.innerHTML = Math.round(response.data.main.temp);
   cityData.innerHTML = `${response.data.name},${response.data.sys.country}`;
   realFeelData.innerHTML = `Realfeel: ${Math.round(
@@ -12,7 +12,7 @@ function mainTemperature(response) {
   )}°`;
   windData.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
   humidityData.innerHTML = `Humidity: ${response.data.main.humidity}%`;
-  //   descriptionData.innerHTML = response.data.weather[0].description;
+  descriptionData.innerHTML = response.data.weather[0].description;
   console.log(response.data.weather[0].description);
 }
 

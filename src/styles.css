@@ -37,10 +37,12 @@ h1 {
   color: pink;
 }
 
-ul {
+ul,
+.description {
   list-style-type: none;
   padding: 0;
   font-size: 18px;
+  text-transform: capitalize;
 }
 
 .main-temperature {
