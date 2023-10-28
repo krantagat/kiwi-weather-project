@@ -18,16 +18,72 @@
       src="https://kit.fontawesome.com/ad2642f3cd.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="src/styles.css" />
-
-    <title>Document</title>
+    <title>Kiwi weather :)</title>
   </head>
   <body>
-    <div>
-      <h1>Hello world</h1>
-      <i class="fa-solid fa-earth-americas"></i>
-      <button type="button" class="btn btn-primary">Primary</button>
+    <div class="project-body">
+      <form>
+        <div class="container">
+          <div class="row">
+            <div class="col-sm">
+              <div class="mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="search-box"
+                  placeholder="Which city..."
+                  autocomplete="off"
+                />
+              </div>
+            </div>
+            <div class="col-sm">
+              <button type="submit" class="btn btn-primary">Search</button>
+            </div>
+            <div class="col-sm">
+              <button type="submit" class="btn btn-success">
+                Current postion
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div class="container">
+        <div class="row">
+          <div class="col-3">
+            <h1>32°</h1>
+            <h6>C | F</h6>
+          </div>
+          <div class="col-sm">
+            <ul>
+              <li>Realfeel: 35°</li>
+              <li>Wind: 20 km/h</li>
+              <li>Humidity: 40%</li>
+            </ul>
+          </div>
+          <div class="col-sm">
+            <i class="fa-solid fa-cloud-sun logo"></i>
+          </div>
+          <div class="col-sm">
+            <h4>City Name, Country</h4>
+            <br />
+            <h9>Sunday 4 June 2023</h9>
+            <h9>23:15</h9>
+          </div>
+        </div>
+      </div>
+      <small class="source"
+        ><a href="https://github.com/krantagat/kiwi-weather-project"
+          >Open-source code</a
+        >
+        by Kranta G.</small
+      >
     </div>
-    <script src="src/index.js"></script>
   </body>
 </html>
