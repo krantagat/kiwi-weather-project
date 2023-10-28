@@ -24,7 +24,9 @@
       href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
       rel="stylesheet"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
+    <script src="src/index.js"></script>
     <title>Kiwi weather :)</title>
   </head>
   <body>
@@ -60,25 +62,25 @@
         <div class="container">
           <div class="row">
             <div class="col-3 main-temperature">
-              <h1>32°</h1>
-              <h6 class="units">C | <a href="#">F</a></h6>
+              <h1 id="temperature">32</h1>
+              <h6 class="units">°C | <a href="#">°F</a></h6>
             </div>
             <div class="col-sm">
               <ul>
-                <li>Realfeel: 35°</li>
-                <li>Wind: 20 km/h</li>
-                <li>Humidity: 40%</li>
-                <li>add somethinelse</li>
+                <li id="realFeel">Realfeel: 35°</li>
+                <li id="wind">Wind: 20 km/h</li>
+                <li id="humidity">Humidity: 40%</li>
+                <!-- <li id="description">add somethinelse</li> -->
               </ul>
             </div>
             <div class="col-sm">
               <i class="fa-solid fa-cloud-sun logo"></i>
             </div>
             <div class="col-sm city-country-time">
-              <h4>City Name, Country</h4>
+              <h4 id="city"><span>City Name</span>, Country</h4>
               <br />
-              <h9>Sunday 4 June 2023</h9>
-              <h9>23:15</h9>
+              <h9 id="date">Sunday 4 June 2023</h9>
+              <h9 id="time">23:15</h9>
             </div>
           </div>
         </div>
