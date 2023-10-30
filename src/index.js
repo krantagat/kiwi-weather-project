@@ -100,6 +100,7 @@ function displayCelsiusTemperature(event) {
   let realFeelData = document.querySelector("#realFeel");
   realFeelData.innerHTML = `Realfeel: ${celsiusRealFeel}°`;
 }
+
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
