@@ -26,34 +26,38 @@
     />
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/styles.css" />
-    <script src="src/index.js"></script>
+
     <title>Kiwi weather :)</title>
   </head>
   <body>
     <div class="project-wrapper">
       <div class="project-body">
-        <form>
+        <form id="search-form">
           <div class="container">
             <div class="row">
-              <div class="col-7">
+              <div class="col-6">
                 <div class="mb-3">
                   <input
-                    type="text"
+                    type="search"
                     class="form-control"
-                    id="search-box"
+                    id="search-city"
                     placeholder="Which city..."
                     autocomplete="off"
                   />
                 </div>
               </div>
               <div class="col-2">
-                <button type="submit" class="btn btn-primary search-button">
+                <button
+                  type="submit"
+                  value="search"
+                  class="btn btn-primary search-button"
+                >
                   Search
                 </button>
               </div>
               <div class="col-sm">
-                <button type="submit" class="btn btn-success">
-                  Current postion
+                <button type="click" class="btn btn-success">
+                  Current position
                 </button>
               </div>
             </div>
@@ -61,22 +65,22 @@
         </form>
         <div class="container">
           <div class="row">
-            <div class="col-3 main-temperature">
-              <h1 id="temperature">32</h1>
+            <div class="col-4 main-temperature">
+              <h1 id="temperature"></h1>
               <h6 class="units">°C | <a href="#">°F</a></h6>
             </div>
-            <div class="col-sm">
+            <div class="col-3">
               <ul>
-                <li id="realFeel">Realfeel: 35°</li>
-                <li id="wind">Wind: 20 km/h</li>
-                <li id="humidity">Humidity: 40%</li>
+                <li id="realFeel">Realfeel:</li>
+                <li id="wind">Wind:</li>
+                <li id="humidity">Humidity</li>
               </ul>
             </div>
-            <div class="col-sm">
+            <div class="col-2">
               <img id="icon" src="" />
               <!-- <i id="icon" class="fa-solid fa-cloud-sun logo"></i> -->
             </div>
-            <div class="col-sm city-country-time">
+            <div class="col-3 city-country-time">
               <h4 id="city"><span>City Name</span>, Country</h4>
               <div class="description" id="description">Description</div>
               <br />
@@ -96,5 +100,18 @@
         by Kranta G.</small
       >
     </div>
+    <!-- 
+    <form id="search-form">
+      <div class="row">
+        <div class="col-9">
+          <input type="search" placeholder="City name" id="city-input" />
+        </div>
+        <div class="col-3">
+          <input type="submit" value="Search" />
+        </div>
+      </div>
+    </form> -->
+
+    <script src="src/index.js"></script>
   </body>
 </html>

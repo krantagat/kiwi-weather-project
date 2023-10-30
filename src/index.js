@@ -61,13 +61,22 @@ function mainTemperature(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-
-  console.log(apiUrl);
 }
 
-// let city = prompt
-let city = "invercargill";
-let apiKey = "ff1d9ea9376b5c27a82e04fc2b2abdbb";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "ff1d9ea9376b5c27a82e04fc2b2abdbb";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
-axios.get(apiUrl).then(mainTemperature);
+  axios.get(apiUrl).then(mainTemperature);
+}
+
+function searchCity(event) {
+  event.preventDefault();
+  let cityData = document.querySelector("#search-city");
+  search(cityData.value);
+  console.log(cityData.value);
+}
+search("Lille");
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searchCity);
