@@ -39,13 +39,13 @@ function formatTime(timestamp) {
 function mainTemperature(response) {
   let temperaureData = document.querySelector("#temperature");
   let cityData = document.querySelector("#city");
-
   let realFeelData = document.querySelector("#realFeel");
   let windData = document.querySelector("#wind");
   let humidityData = document.querySelector("#humidity");
   let descriptionData = document.querySelector("#description");
   let dateData = document.querySelector("#date");
   let timeData = document.querySelector("#time");
+  let iconData = document.querySelector("#icon");
   temperaureData.innerHTML = Math.round(response.data.main.temp);
   cityData.innerHTML = `${response.data.name},${response.data.sys.country}`;
   realFeelData.innerHTML = `Realfeel: ${Math.round(
@@ -54,15 +54,19 @@ function mainTemperature(response) {
   windData.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
   humidityData.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   descriptionData.innerHTML = response.data.weather[0].description;
-
   dateData.innerHTML = formatDate(response.data.dt * 1000);
   timeData.innerHTML = formatTime(response.data.dt * 1000);
+
+  iconData.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 
   console.log(apiUrl);
 }
 
 // let city = prompt
-let city = "Aguascalientes";
+let city = "invercargill";
 let apiKey = "ff1d9ea9376b5c27a82e04fc2b2abdbb";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 

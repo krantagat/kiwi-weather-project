@@ -45,6 +45,9 @@ ul {
 }
 .description {
   font-size: 20px;
+}
+
+.description:first-letter {
   text-transform: capitalize;
 }
 
