@@ -37,7 +37,7 @@ function formatTime(timestamp) {
 }
 
 function mainTemperature(response) {
-  let temperaureData = document.querySelector("#temperature");
+  let temperatureData = document.querySelector("#temperature");
   let cityData = document.querySelector("#city");
   let realFeelData = document.querySelector("#realFeel");
   let windData = document.querySelector("#wind");
@@ -46,11 +46,12 @@ function mainTemperature(response) {
   let dateData = document.querySelector("#date");
   let timeData = document.querySelector("#time");
   let iconData = document.querySelector("#icon");
-  temperaureData.innerHTML = Math.round(response.data.main.temp);
+
+  celsiusTemperature = Math.round(response.data.main.temp);
+  temperatureData.innerHTML = celsiusTemperature;
   cityData.innerHTML = `${response.data.name},${response.data.sys.country}`;
-  realFeelData.innerHTML = `Realfeel: ${Math.round(
-    response.data.main.feels_like
-  )}°`;
+  celsiusRealFeel = Math.round(response.data.main.feels_like);
+  realFeelData.innerHTML = `Realfeel: ${celsiusRealFeel}°`;
   windData.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
   humidityData.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   descriptionData.innerHTML = response.data.weather[0].description;
@@ -76,7 +77,38 @@ function searchCity(event) {
   search(cityData.value);
   console.log(cityData.value);
 }
-search("Lille");
+
+function displayFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureData = document.querySelector("#temperature");
+  // remove the active class from the celsius
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let realFeelData = document.querySelector("#realFeel");
+  let fahrenheit = (celsiusTemperature * 9) / 5 + 32;
+  let realFeelFahrenheit = Math.round((celsiusRealFeel * 9) / 5 + 32);
+  temperatureData.innerHTML = Math.round(fahrenheit);
+  realFeelData.innerHTML = `Realfeel: ${realFeelFahrenheit}°`;
+}
+
+function displayCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureData = document.querySelector("#temperature");
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  temperatureData.innerHTML = celsiusTemperature;
+  let realFeelData = document.querySelector("#realFeel");
+  realFeelData.innerHTML = `Realfeel: ${celsiusRealFeel}°`;
+}
+let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemperature);
+
+search("Lille");
