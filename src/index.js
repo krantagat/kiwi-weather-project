@@ -131,38 +131,38 @@ function searchCity(event) {
   console.log(cityData.value);
 }
 
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureData = document.querySelector("#temperature");
-  // remove the active class from the celsius
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let realFeelData = document.querySelector("#realFeel");
-  let fahrenheit = (celsiusTemperature * 9) / 5 + 32;
-  let realFeelFahrenheit = Math.round((celsiusRealFeel * 9) / 5 + 32);
-  temperatureData.innerHTML = Math.round(fahrenheit);
-  realFeelData.innerHTML = `Realfeel: ${realFeelFahrenheit}°`;
-}
+// function displayFahrenheitTemperature(event) {
+//   event.preventDefault();
+//   let temperatureData = document.querySelector("#temperature");
+//   // remove the active class from the celsius
+//   celsiusLink.classList.remove("active");
+//   fahrenheitLink.classList.add("active");
+//   let realFeelData = document.querySelector("#realFeel");
+//   let fahrenheit = (celsiusTemperature * 9) / 5 + 32;
+//   let realFeelFahrenheit = Math.round((celsiusRealFeel * 9) / 5 + 32);
+//   temperatureData.innerHTML = Math.round(fahrenheit);
+//   realFeelData.innerHTML = `Realfeel: ${realFeelFahrenheit}°`;
+// }
 
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureData = document.querySelector("#temperature");
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-  temperatureData.innerHTML = celsiusTemperature;
-  let realFeelData = document.querySelector("#realFeel");
-  realFeelData.innerHTML = `Realfeel: ${celsiusRealFeel}°`;
-}
+// function displayCelsiusTemperature(event) {
+//   event.preventDefault();
+//   let temperatureData = document.querySelector("#temperature");
+//   celsiusLink.classList.add("active");
+//   fahrenheitLink.classList.remove("active");
+//   temperatureData.innerHTML = celsiusTemperature;
+//   let realFeelData = document.querySelector("#realFeel");
+//   realFeelData.innerHTML = `Realfeel: ${celsiusRealFeel}°`;
+// }
 
 let celsiusTemperature = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
 
-let fahrenheitLink = document.querySelector("#fahrenheit");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
+// let fahrenheitLink = document.querySelector("#fahrenheit");
+// fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
-let celsiusLink = document.querySelector("#celsius");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
+// let celsiusLink = document.querySelector("#celsius");
+// celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Lille");
