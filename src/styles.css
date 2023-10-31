@@ -16,12 +16,13 @@
 }
 
 h9 {
-  font-size: 8px;
+  font-size: 10px;
+  text-align: right;
 }
 
 h1 {
   font-size: 100px;
-  font-weight: 200;
+  font-weight: normal;
   display: inline;
   position: relative;
   top: -20px;
@@ -72,4 +73,15 @@ a:hover {
   color: black;
   cursor: default;
   text-decoration: none;
+}
+
+span.forecast-max-temp {
+  font-weight: bold;
+}
+span.forecast-min-temp {
+  font-weight: lighter;
+}
+
+.forecast-per-day {
+  text-align: center;
 }

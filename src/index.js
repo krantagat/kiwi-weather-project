@@ -49,7 +49,7 @@ function mainTemperature(response) {
 
   celsiusTemperature = Math.round(response.data.main.temp);
   temperatureData.innerHTML = celsiusTemperature;
-  cityData.innerHTML = `${response.data.name},${response.data.sys.country}`;
+  cityData.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
   celsiusRealFeel = Math.round(response.data.main.feels_like);
   realFeelData.innerHTML = `Realfeel: ${celsiusRealFeel}°`;
   windData.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} km/h`;
