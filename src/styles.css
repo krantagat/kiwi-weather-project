@@ -88,3 +88,8 @@ span.forecast-min-temp {
 .forecast-box {
   text-align: center;
 }
+
+.forecast-per-day {
+  font-size: 20px;
+  font-weight: bold;
+}
