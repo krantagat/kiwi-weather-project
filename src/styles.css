@@ -15,9 +15,11 @@
   border-radius: 15px;
 }
 
-h9 {
+.last-updated {
   font-size: 10px;
   text-align: right;
+  position: relative;
+  left: 430px;
 }
 
 h1 {
@@ -82,6 +84,6 @@ span.forecast-min-temp {
   font-weight: lighter;
 }
 
-.forecast-per-day {
+.forecast-box {
   text-align: center;
 }

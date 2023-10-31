@@ -36,6 +36,29 @@ function formatTime(timestamp) {
   return `${hour}:${minute}`;
 }
 
+function displayForecast() {
+  let forecastData = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-3 forecast-box">
+        <div class="forecast-per-day">${day}</div>
+        <img id="icon" src="https://openweathermap.org/img/wn/10d@2x.png" />
+        <div class="forecast-temp">
+          <span class="forecast-max-temp">18°</span>
+          <span class="forecast-min-temp">10°</span>
+        </div>
+      </div>
+    
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastData.innerHTML = forecastHTML;
+}
+
 function mainTemperature(response) {
   let temperatureData = document.querySelector("#temperature");
   let cityData = document.querySelector("#city");
@@ -44,7 +67,8 @@ function mainTemperature(response) {
   let humidityData = document.querySelector("#humidity");
   let descriptionData = document.querySelector("#description");
   let dateData = document.querySelector("#date");
-  let timeData = document.querySelector("#time");
+  let dateLastUpdateData = document.querySelector("#dateLastUpdate");
+  let timeLastUpdateData = document.querySelector("#timeLastUpdate");
   let iconData = document.querySelector("#icon");
 
   celsiusTemperature = Math.round(response.data.main.temp);
@@ -56,7 +80,8 @@ function mainTemperature(response) {
   humidityData.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   descriptionData.innerHTML = response.data.weather[0].description;
   dateData.innerHTML = formatDate(response.data.dt * 1000);
-  timeData.innerHTML = formatTime(response.data.dt * 1000);
+  dateLastUpdateData.innerHTML = formatDate(response.data.dt * 1000);
+  timeLastUpdateData.innerHTML = formatTime(response.data.dt * 1000);
 
   iconData.setAttribute(
     "src",
@@ -102,6 +127,8 @@ function displayCelsiusTemperature(event) {
 }
 
 let celsiusTemperature = null;
+
+displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchCity);
