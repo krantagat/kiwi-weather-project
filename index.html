@@ -35,7 +35,7 @@
         <form id="search-form">
           <div class="container">
             <div class="row">
-              <div class="col-10">
+              <div class="col-6">
                 <div class="mb-3">
                   <input
                     type="search"
@@ -55,11 +55,15 @@
                   Search
                 </button>
               </div>
-              <!-- <div class="col-sm">
-                <button type="click" class="btn btn-success">
+              <div class="col-sm">
+                <button
+                  type="click"
+                  class="btn btn-success"
+                  id="current-location-button"
+                >
                   Current position
                 </button>
-              </div> -->
+              </div>
             </div>
           </div>
         </form>
@@ -97,11 +101,11 @@
         </div>
         <div class="forecast" id="forecast"></div>
 
-        <h9 class="last-updated"
-          >Last update:
+        <div class="last-updated">
+          Last update:
           <span id="dateLastUpdate"></span>
-          <span id="timeLastUpdate"></span
-        ></h9>
+          <span id="timeLastUpdate"></span>
+        </div>
       </div>
       <small class="source"
         ><a href="https://github.com/krantagat/kiwi-weather-project"
