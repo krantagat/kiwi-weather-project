@@ -35,7 +35,7 @@
         <form id="search-form">
           <div class="container">
             <div class="row">
-              <div class="col-sm-6">
+              <div class="col-sm-6 text-center mb-1">
                 <div class="mb-3">
                   <input
                     type="search"
@@ -46,7 +46,7 @@
                   />
                 </div>
               </div>
-              <div class="col-sm-2">
+              <div class="col-sm-2 text-center mb-1">
                 <button
                   type="submit"
                   value="search"
@@ -55,10 +55,10 @@
                   Search
                 </button>
               </div>
-              <div class="col-sm-sm">
+              <div class="col-sm-4 text-center mb-4">
                 <button
                   type="click"
-                  class="btn btn-success"
+                  class="btn btn-success mb-1"
                   id="current-location-button"
                 >
                   Current position
@@ -68,8 +68,8 @@
           </div>
         </form>
         <div class="container">
-          <div class="row">
-            <div class="col-sm-4 main-temperature">
+          <div class="row pb-1">
+            <div class="col-sm-4 text-center main-temperature">
               <div class="weather-temprature">
                 <h1 id="temperature">-</h1>
                 <span class="units">
@@ -81,17 +81,17 @@
                 </span>
               </div>
             </div>
-            <div class="col-sm-3">
+            <div class="col-sm-3 text-center">
               <ul>
                 <li id="realFeel">Realfeel:</li>
                 <li id="wind">Wind:</li>
                 <li id="humidity">Humidity</li>
               </ul>
             </div>
-            <div class="col-sm-2">
-              <img id="icon" src="" />
+            <div class="col-sm-2 p-0 text-center">
+              <img class="img-fluid" id="icon" />
             </div>
-            <div class="col-sm-3 city-country-time">
+            <div class="col-sm-3 text-center city-country-time">
               <span id="date"></span>
               <h4 id="city"><span>City Name</span>, Country</h4>
               <div class="description" id="description">Description</div>
@@ -99,8 +99,9 @@
             </div>
           </div>
         </div>
-        <div class="forecast" id="forecast"></div>
-
+        <div class="container">
+          <div class="forecast" id="forecast"></div>
+        </div>
         <div class="last-updated">
           Last update:
           <span id="dateLastUpdate"></span>

@@ -47,17 +47,18 @@ function displayForecast(response) {
   let forecast = response.data.daily;
 
   let forecastData = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row g-2">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 4) {
       forecastHTML =
         forecastHTML +
         `
       <div class="col-sm-3 forecast-box">
-        <div class="forecast-per-day">${formatForecastDay(
+      <div class="border rounded p-1 m-2">
+        <div class="forecast-per-day ">${formatForecastDay(
           forecastDay.time
         )}</div>
-        <img id="icon" src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
+        <img class="img-fluid"  id="icon" src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/${
           forecastDay.condition.icon
         }.png" />
         <div class="forecast-temp">
@@ -67,6 +68,7 @@ function displayForecast(response) {
           <span class="forecast-min-temp">${Math.round(
             forecastDay.temperature.minimum
           )}°</span>
+        </div>
         </div>
       </div>
     
